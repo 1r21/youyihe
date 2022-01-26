@@ -1,4 +1,4 @@
-import { News } from "./api";
+import { News, translate } from "./api";
 import entities from "./entities";
 
 export function formatPlayTime(seconds: number) {
@@ -10,10 +10,24 @@ export function formatPlayTime(seconds: number) {
   return `${min < 10 ? "0" : ""}${min}:${sec < 10 ? "0" : ""}${sec}`;
 }
 
+export function changeTitle(title: string) {
+  const { env, biz } = window.dd;
+  if (env.platform !== "notInDingTalk") {
+    biz.navigation.setTitle({
+      title,
+    });
+  } else {
+    document.title = title;
+  }
+}
+
 export type Text = {
   idx: number;
   type: "title" | "text";
-  style: unknown,
+  style: {
+    color?: string;
+    fontWeight?: string
+  }
   value: string;
 };
 
@@ -76,6 +90,48 @@ export function throttle(fn: Function, delay = 300) {
     if (now - last >= delay) {
       fn(...args)
       last = Date.now()
+    }
+  }
+}
+
+export function getMousePos(e: MouseEvent) {
+  const { x, y } = e;
+  const selection = window.getSelection();
+  if (selection) {
+    const range = selection.getRangeAt(0);
+    const txt = String(range);
+    return {
+      x,
+      y,
+      sectionText: txt,
+    };
+  }
+}
+
+export async function doTranslate(
+  texts: { type: string; value: string; trans?: string }[],
+  text: string,
+  trans: string | undefined
+) {
+  if (trans) {
+    return texts.map((item) => {
+      if (item.value === text) {
+        item.trans = "";
+        return item;
+      }
+      return item;
+    });
+  } else {
+    const { list } = await translate(text);
+    if (list && list.length > 0) {
+      const [first] = list;
+      return texts.map((item) => {
+        if (item.value === text) {
+          item.trans = first.dst;
+          return item;
+        }
+        return item;
+      });
     }
   }
 }
