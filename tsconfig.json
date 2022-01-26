@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "esnext",
+    "target": "es6",
+    "allowJs": false,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "removeComments": false,
+    "declaration": true,
+    "declarationDir": ".",
+    "moduleResolution": "Node",
+    "preserveConstEnums": true,
+    "sourceMap": false,
+    "types": [
+      "node",
+      "jest"
+    ]
+  },
+  "include": [
+    "src/*.ts",
+    "__tests__"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

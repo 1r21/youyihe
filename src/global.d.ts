@@ -1,0 +1,1 @@
+declare const __API_HOST__: string;
