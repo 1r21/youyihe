@@ -1,19 +1,5 @@
-import request from "./request";
-
-export type News = {
-  id?: number;
-  title: string;
-  src: string;
-  cover: string;
-  source: string;
-  transcript: string;
-  date: string;
-};
-
-export type Translation = {
-  src: string;
-  dst: string;
-};
+import request from "@1r21/yyh-request";
+import { News, Translation } from "@1r21/yyh-types";
 
 export async function getNews() {
   return request.get<null, { list: News[] }>("/news");

@@ -1,0 +1,26 @@
+{
+  "name": "@1r21/yyh-util",
+  "version": "0.0.1",
+  "description": "taishan util",
+  "main": "index.js",
+  "module": "dist/util.esm.js",
+  "types": "dist/util.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1r21/youyihe.git",
+    "directory": "packages/util"
+  },
+  "keywords": [
+    "util",
+    "common"
+  ],
+  "author": "iron",
+  "license": "MIT",
+  "dependencies": {
+    "@1r21/yyh-types": "workspace:0.0.1"
+  }
+}

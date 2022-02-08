@@ -1,25 +1,37 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "outDir": "dist",
     "module": "esnext",
-    "target": "es6",
+    "target": "es2016",
     "allowJs": false,
     "noImplicitAny": true,
     "esModuleInterop": true,
     "removeComments": false,
     "declaration": true,
-    "declarationDir": ".",
+    "declarationMap": true,
     "moduleResolution": "Node",
     "preserveConstEnums": true,
     "sourceMap": false,
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "types": [
       "node",
       "jest"
-    ]
+    ],
+    "rootDir": ".",
+    "paths": {
+      "@1r21/yyh-*": [
+        "packages/*/src"
+      ],
+    }
   },
   "include": [
-    "src/*.ts",
-    "__tests__"
+    "packages/global.d.ts",
+    "packages/*/src",
+    "packages/*/__tests__",
   ],
   "exclude": [
     "node_modules"

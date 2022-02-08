@@ -1,0 +1,22 @@
+{
+  "name": "@1r21/yyh-types",
+  "version": "0.0.1",
+  "description": "common types",
+  "main": "index.js",
+  "module": "dist/types.esm.js",
+  "types": "dist/types.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1r21/youyihe.git",
+    "directory": "packages/types"
+  },
+  "keywords": [
+    "types"
+  ],
+  "author": "iron",
+  "license": "MIT"
+}

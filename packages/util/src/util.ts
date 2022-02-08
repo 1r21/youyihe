@@ -1,4 +1,5 @@
-import { News, translate } from "./api";
+import { News } from "@1r21/yyh-types";
+
 import entities from "./entities";
 
 export function formatPlayTime(seconds: number) {
@@ -105,33 +106,5 @@ export function getMousePos(e: MouseEvent) {
       y,
       sectionText: txt,
     };
-  }
-}
-
-export async function doTranslate(
-  texts: { type: string; value: string; trans?: string }[],
-  text: string,
-  trans: string | undefined
-) {
-  if (trans) {
-    return texts.map((item) => {
-      if (item.value === text) {
-        item.trans = "";
-        return item;
-      }
-      return item;
-    });
-  } else {
-    const { list } = await translate(text);
-    if (list && list.length > 0) {
-      const [first] = list;
-      return texts.map((item) => {
-        if (item.value === text) {
-          item.trans = first.dst;
-          return item;
-        }
-        return item;
-      });
-    }
   }
 }

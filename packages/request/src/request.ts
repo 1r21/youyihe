@@ -1,4 +1,5 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
+import { ResponseData } from '@1r21/yyh-types';
 
 axios.defaults.baseURL = __API_HOST__ + '/api';
 
@@ -11,7 +12,7 @@ axios.interceptors.request.use(
 );
 
 // Add a response interceptor
-axios.interceptors.response.use((response) => {
+axios.interceptors.response.use((response: AxiosResponse<ResponseData>) => {
   const { status, data: res } = response;
   if (status === 200) {
     const { code, message, data } = res;

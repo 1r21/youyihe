@@ -1,0 +1,27 @@
+{
+  "name": "@1r21/yyh-request",
+  "version": "0.0.1",
+  "description": "taishan network for FE",
+  "main": "index.js",
+  "module": "dist/request.esm.js",
+  "types": "dist/request.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1r21/youyihe.git",
+    "directory": "packages/request"
+  },
+  "keywords": [
+    "network",
+    "request"
+  ],
+  "author": "iron",
+  "license": "MIT",
+  "dependencies": {
+    "@1r21/yyh-types": "workspace:0.0.1",
+    "axios": "^0.25.0"
+  }
+}

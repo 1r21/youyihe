@@ -1,39 +1,18 @@
 {
-  "name": "@1r21/youyihe",
-  "version": "0.0.3",
-  "description": "common for taishan client",
-  "author": "iron",
-  "license": "MIT",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/1r21/youyihe.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "prebuild": "rimraf -rf dist",
-    "build": "rollup -c",
-    "dev": "npm run build -- -w",
-    "test": "jest"
-  },
-  "peerDependencies": {
-    "axios": "^0.25.0"
+    "preinstall": "npx only-allow pnpm",
+    "build": "zx scripts/build.mjs"
   },
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.19.4",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.0",
     "@types/jest": "^27.4.0",
     "@types/node": "^17.0.10",
     "@typescript-eslint/parser": "^5.10.0",
-    "axios": "^0.25.0",
     "eslint": "^8.7.0",
     "jest": "^27.4.7",
     "lint-staged": "^12.2.1",
@@ -42,7 +21,8 @@
     "rollup": "^2.64.0",
     "ts-jest": "^27.1.3",
     "tslib": "^2.3.1",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "zx": "^4.3.0"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -57,7 +37,6 @@
     ]
   },
   "engines": {
-    "node": ">=14",
-    "pnpm": ">=6"
+    "node": ">=14"
   }
 }
