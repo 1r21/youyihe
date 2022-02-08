@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { ResponseData } from '@1r21/yyh-types';
+import { ResponseData } from './types';
 
 axios.defaults.baseURL = __API_HOST__ + '/api';
 

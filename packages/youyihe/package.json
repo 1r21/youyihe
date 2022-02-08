@@ -23,8 +23,8 @@
   "author": "iron",
   "license": "MIT",
   "dependencies": {
-    "@1r21/yyh-api": "workspace:0.0.1",
-    "@1r21/yyh-types": "workspace:0.0.1",
-    "@1r21/yyh-util": "workspace:0.0.1"
+    "@1r21/api": "workspace:0.0.1",
+    "@1r21/types": "workspace:0.0.1",
+    "@1r21/util": "workspace:0.0.1"
   }
 }

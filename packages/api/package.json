@@ -1,5 +1,5 @@
 {
-  "name": "@1r21/yyh-api",
+  "name": "@1r21/api",
   "version": "0.0.1",
   "description": "taishan backend api",
   "main": "index.js",
@@ -21,7 +21,7 @@
   "author": "iron",
   "license": "MIT",
   "dependencies": {
-    "@1r21/yyh-request": "workspace:0.0.1",
-    "@1r21/yyh-types": "workspace:^0.0.1"
+    "@1r21/request": "workspace:0.0.1",
+    "@1r21/types": "workspace:^0.0.1"
   }
 }

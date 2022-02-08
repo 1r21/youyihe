@@ -1,4 +1,4 @@
-import { News } from "@1r21/yyh-types";
+import { News } from "@1r21/types";
 
 import entities from "./entities";
 

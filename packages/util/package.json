@@ -1,7 +1,7 @@
 {
-  "name": "@1r21/yyh-util",
+  "name": "@1r21/util",
   "version": "0.0.1",
-  "description": "taishan util",
+  "description": "taishan web util",
   "main": "index.js",
   "module": "dist/util.esm.js",
   "types": "dist/util.d.ts",
@@ -21,6 +21,6 @@
   "author": "iron",
   "license": "MIT",
   "dependencies": {
-    "@1r21/yyh-types": "workspace:0.0.1"
+    "@1r21/types": "workspace:0.0.1"
   }
 }

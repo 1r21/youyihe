@@ -1,5 +1,5 @@
-import request from "@1r21/yyh-request";
-import { News, Translation } from "@1r21/yyh-types";
+import request from "@1r21/request";
+import { News, Translation } from "@1r21/types";
 
 export async function getNews() {
   return request.get<null, { list: News[] }>("/news");

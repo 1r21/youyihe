@@ -1,11 +1,5 @@
-export type ResponseData = {
-  code: number;
-  message: string;
-  data: unknown;
-}
-
 export type News = {
-  id?: number;
+  id: string;
   title: string;
   src: string;
   cover: string;

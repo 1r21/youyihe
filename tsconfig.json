@@ -23,7 +23,7 @@
     ],
     "rootDir": ".",
     "paths": {
-      "@1r21/yyh-*": [
+      "@1r21/*": [
         "packages/*/src"
       ],
     }

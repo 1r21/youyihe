@@ -42,18 +42,16 @@ importers:
 
   packages/api:
     specifiers:
-      '@1r21/yyh-request': workspace:0.0.1
-      '@1r21/yyh-types': workspace:^0.0.1
+      '@1r21/request': workspace:0.0.1
+      '@1r21/types': workspace:^0.0.1
     dependencies:
-      '@1r21/yyh-request': link:../request
-      '@1r21/yyh-types': link:../types
+      '@1r21/request': link:../request
+      '@1r21/types': link:../types
 
   packages/request:
     specifiers:
-      '@1r21/yyh-types': workspace:0.0.1
       axios: ^0.25.0
     dependencies:
-      '@1r21/yyh-types': link:../types
       axios: 0.25.0
 
   packages/types:
@@ -61,19 +59,19 @@ importers:
 
   packages/util:
     specifiers:
-      '@1r21/yyh-types': workspace:0.0.1
+      '@1r21/types': workspace:0.0.1
     dependencies:
-      '@1r21/yyh-types': link:../types
+      '@1r21/types': link:../types
 
   packages/youyihe:
     specifiers:
-      '@1r21/yyh-api': workspace:0.0.1
-      '@1r21/yyh-types': workspace:0.0.1
-      '@1r21/yyh-util': workspace:0.0.1
+      '@1r21/api': workspace:0.0.1
+      '@1r21/types': workspace:0.0.1
+      '@1r21/util': workspace:0.0.1
     dependencies:
-      '@1r21/yyh-api': link:../api
-      '@1r21/yyh-types': link:../types
-      '@1r21/yyh-util': link:../util
+      '@1r21/api': link:../api
+      '@1r21/types': link:../types
+      '@1r21/util': link:../util
 
 packages:
 
