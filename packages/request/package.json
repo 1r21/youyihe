@@ -5,6 +5,7 @@
   "main": "index.js",
   "module": "dist/request.esm.js",
   "types": "dist/request.d.ts",
+  "miniprogram": "dist/request.cjs.js",
   "files": [
     "index.js",
     "dist"

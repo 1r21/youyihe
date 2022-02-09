@@ -1,2 +1,2 @@
+export { default as entities } from './entities'
 export * from './util'
-export { default } from './entities'

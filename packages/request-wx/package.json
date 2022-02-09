@@ -1,0 +1,25 @@
+{
+  "name": "@1r21/request-wx",
+  "version": "0.0.1",
+  "description": "taishan network for wechat",
+  "main": "index.js",
+  "module": "dist/request-wx.esm.js",
+  "types": "dist/request-wx.d.ts",
+  "miniprogram": "dist/request-wx.cjs.js",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1r21/youyihe.git",
+    "directory": "packages/request-wx"
+  },
+  "keywords": [
+    "network",
+    "request",
+    "wechat miniprogram"
+  ],
+  "author": "iron",
+  "license": "MIT"
+}

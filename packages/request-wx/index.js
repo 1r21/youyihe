@@ -1,0 +1,1 @@
+module.exports = require('./dist/request-wx.cjs.js')

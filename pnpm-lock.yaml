@@ -43,9 +43,11 @@ importers:
   packages/api:
     specifiers:
       '@1r21/request': workspace:0.0.1
+      '@1r21/request-wx': workspace:^0.0.1
       '@1r21/types': workspace:^0.0.1
     dependencies:
       '@1r21/request': link:../request
+      '@1r21/request-wx': link:../request-wx
       '@1r21/types': link:../types
 
   packages/request:
@@ -53,6 +55,12 @@ importers:
       axios: ^0.25.0
     dependencies:
       axios: 0.25.0
+
+  packages/request-wx:
+    specifiers:
+      miniprogram-api-typings: ^3.4.5
+    dependencies:
+      miniprogram-api-typings: 3.4.5
 
   packages/types:
     specifiers: {}
@@ -2942,6 +2950,10 @@ packages:
   /minimist/1.2.5:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
     dev: true
+
+  /miniprogram-api-typings/3.4.5:
+    resolution: {integrity: sha512-GWvMdmPhJ40PLq4/sOh+n2xGRKf2R3kcuOaSe7IRTdT+Os8lfNrJYehYdgH7IoUWqaHqV8mFEWQj5oPIGhVv4Q==}
+    dev: false
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}

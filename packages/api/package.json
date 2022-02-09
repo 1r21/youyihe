@@ -5,6 +5,7 @@
   "main": "index.js",
   "module": "dist/api.esm.js",
   "types": "dist/api.d.ts",
+  "miniprogram": "dist/api.cjs.js",
   "files": [
     "index.js",
     "dist"
@@ -22,6 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "@1r21/request": "workspace:0.0.1",
+    "@1r21/request-wx": "workspace:^0.0.1",
     "@1r21/types": "workspace:^0.0.1"
   }
 }

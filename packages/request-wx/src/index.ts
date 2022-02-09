@@ -1,0 +1,1 @@
+export { default, WxRequest } from './request-wx'

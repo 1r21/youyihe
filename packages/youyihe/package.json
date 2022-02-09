@@ -5,6 +5,7 @@
   "main": "index.js",
   "module": "dist/youyihe.esm.js",
   "types": "dist/youyihe.d.ts",
+  "miniprogram": "dist/youyihe.cjs.js",
   "files": [
     "index.js",
     "dist"

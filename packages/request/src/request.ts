@@ -1,18 +1,21 @@
-import axios, { AxiosResponse } from "axios";
-import { ResponseData } from './types';
+import axios, { Axios, AxiosRequestConfig, AxiosResponse } from "axios";
 
-axios.defaults.baseURL = __API_HOST__ + '/api';
-
-axios.defaults.headers.post["Content-Type"] = "application/json";
+// create instance
+const instance = axios.create({
+  baseURL: __API_HOST__ + '/api',
+  headers: {
+    'Content-Type': "application/json"
+  }
+})
 
 // Add a request interceptor
-axios.interceptors.request.use(
+instance.interceptors.request.use(
   (config) => config,
   (error) => Promise.reject(error)
 );
 
 // Add a response interceptor
-axios.interceptors.response.use((response: AxiosResponse<ResponseData>) => {
+instance.interceptors.response.use(<T>(response: AxiosResponse<ResponseData<T>>) => {
   const { status, data: res } = response;
   if (status === 200) {
     const { code, message, data } = res;
@@ -24,4 +27,33 @@ axios.interceptors.response.use((response: AxiosResponse<ResponseData>) => {
   return Promise.reject("Api Request Err 500");
 });
 
-export default axios;
+export class WebRequest extends Axios {
+  async request<R>(config: AxiosRequestConfig) {
+    return instance.request<any, R>(config)
+  }
+  async get<R>(url: string, config?: AxiosRequestConfig) {
+    return instance.get<any, R>(url, config)
+  }
+  async post<R>(url: string, data?: any, config?: AxiosRequestConfig) {
+    return instance.post<any, R>(url, data, config)
+  }
+}
+
+// const http = {
+//   ...instance,
+//   getUri(config?: AxiosRequestConfig) {
+//     return instance.getUri(config)
+//   },
+//   async request<R>(config: AxiosRequestConfig) {
+//     return instance.request<any, R>(config)
+//   },
+//   async get<R>(url: string, config?: AxiosRequestConfig) {
+//     return instance.get<any, R>(url, config)
+//   },
+//   async post<R>(url: string, data?: any, config?: AxiosRequestConfig) {
+//     return instance.post<any, R>(url, data, config)
+//   }
+// }
+
+
+export default new WebRequest;

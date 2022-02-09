@@ -37,11 +37,12 @@ export default defineConfig({
   output: [
     {
       file: resolve(`dist/${name}.esm.js`),
+      exports: "named",
       format: "es",
     },
     {
       file: resolve(`dist/${name}.cjs.js`),
-      exports: "auto",
+      exports: "named",
       format: "cjs",
     },
   ],

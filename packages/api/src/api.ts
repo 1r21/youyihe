@@ -1,18 +1,18 @@
-import request from "@1r21/request";
 import { News, Translation } from "@1r21/types";
+import request from './loadHttp'
 
 export async function getNews() {
-  return request.get<null, { list: News[] }>("/news");
+  return (await request).get<{ list: News[] }>("/news");
 }
 
 export async function getNewsById(id: string) {
-  return request.post<null, News>("/news/detail", {
+  return (await request).post<News>("/news/detail", {
     id,
   });
 }
 
 export async function translate(q: string) {
-  return request.post<null, { list: Translation[] | null }>("/translate", {
+  return (await request).post<{ list: Translation[] | null }>("/translate", {
     q,
   });
 }

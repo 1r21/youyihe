@@ -4,6 +4,13 @@ import rimraf from "rimraf";
 import { Extractor, ExtractorConfig } from "@microsoft/api-extractor";
 import { $ } from "zx";
 
+// build one target
+// eg: TARGET=api pnpm build
+if(process.env.TARGET) {
+  await build(process.env.TARGET)
+  process.exit(1)
+}
+
 // all targets
 const allTargets = fs.readdirSync("packages").filter((f) => {
   if (!fs.statSync(`packages/${f}`).isDirectory()) {
@@ -12,7 +19,7 @@ const allTargets = fs.readdirSync("packages").filter((f) => {
   return true;
 });
 
-// build
+// build all
 for (const target of allTargets) {
   await build(target);
 }
