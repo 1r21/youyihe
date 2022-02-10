@@ -1,3 +1,5 @@
+declare function getApp<T>(): T | any;
+
 type Method = "OPTIONS" | "GET" | "HEAD" | "POST" | "PUT" | "DELETE";
 
 type Params = {

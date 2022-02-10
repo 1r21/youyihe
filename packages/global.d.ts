@@ -1,12 +1,10 @@
 declare const __API_HOST__: string;
 
-// weichat
+// wechat
 declare const wx: any;
-declare function getApp<T>(): any;
 
 declare interface Window {
   dd: any;
-  wx: any;
 }
 
 // response shape

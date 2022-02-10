@@ -22,6 +22,6 @@
   "author": "iron",
   "license": "MIT",
   "dependencies": {
-    "@1r21/types": "workspace:0.0.1"
+    "@1r21/types": "workspace:*"
   }
 }
