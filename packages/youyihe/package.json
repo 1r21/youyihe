@@ -1,6 +1,6 @@
 {
   "name": "@1r21/youyihe",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "@1r21/youyihe",
   "main": "index.js",
   "module": "dist/youyihe.esm.js",
