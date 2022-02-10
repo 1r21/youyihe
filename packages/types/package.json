@@ -1,6 +1,6 @@
 {
   "name": "@1r21/types",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "common types",
   "main": "index.js",
   "module": "dist/types.esm.js",

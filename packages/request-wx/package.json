@@ -1,6 +1,6 @@
 {
   "name": "@1r21/request-wx",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "taishan network for wechat",
   "main": "index.js",
   "module": "dist/request-wx.esm.js",

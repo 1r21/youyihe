@@ -1,6 +1,6 @@
 {
   "name": "@1r21/api",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "taishan backend api",
   "main": "index.js",
   "module": "dist/api.esm.js",
