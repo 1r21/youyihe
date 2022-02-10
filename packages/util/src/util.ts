@@ -25,6 +25,8 @@ export function changeTitle(title: string) {
 export type Text = {
   idx: number;
   type: "title" | "text";
+  // miniprogram
+  rawStyle: string;
   style: {
     color?: string;
     fontWeight?: string
@@ -45,6 +47,7 @@ export function parseText(rawhtml: News["transcript"]): Text[] {
   const nullText: Text = {
     idx: 1,
     type: 'text',
+    rawStyle: deconstructStyle(textStyle),
     style: textStyle,
     value: "Not prepare yet."
   }
@@ -69,6 +72,7 @@ export function parseText(rawhtml: News["transcript"]): Text[] {
         return {
           idx: index,
           type: "title",
+          rawStyle: deconstructStyle(titleStyle),
           style: titleStyle,
           value: item.replace(tRe, "$1"),
         };
@@ -76,12 +80,23 @@ export function parseText(rawhtml: News["transcript"]): Text[] {
       return {
         idx: index,
         type: "text",
+        rawStyle: deconstructStyle(textStyle),
         style: textStyle,
         value: item.replace(/<p[^>]*>(.*?)<\/p>/g, "$1"),
       };
     });
   }
   return [nullText];
+}
+
+// obj to string, {fontWeight: 'bolder'} => "font-weight: bolder"
+function deconstructStyle(styleObj: { [styleName: string]: string }) {
+  return Object.keys(styleObj).reduce((acc, style) => {
+    const styleVal = styleObj[style] + ';'
+    const transformStyleKey = style.replace(/([A-Z])/g, "-$1").toLowerCase();
+    acc += `${transformStyleKey}:${styleVal}`
+    return acc;
+  }, '');
 }
 
 export function throttle(fn: Function, delay = 300) {
