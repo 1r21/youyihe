@@ -16,6 +16,23 @@ const pkg = require(resolve(`package.json`));
 
 const packageOptions = pkg.buildOptions || {};
 const name = packageOptions.filename || path.basename(pkgDir);
+const defaultFormats = ["esm", "cjs"];
+const packageFormats = packageOptions.formats || defaultFormats;
+
+const outputConfigs = {
+  "esm": {
+    file: resolve(`dist/${name}.esm.js`),
+    exports: "named",
+    format: "es",
+  },
+  cjs: {
+    file: resolve(`dist/${name}.cjs.js`),
+    exports: "named",
+    format: "cjs",
+  },
+};
+
+const output = packageFormats.map((format) => outputConfigs[format]);
 
 export default defineConfig({
   input: resolve(`src/index.ts`),
@@ -34,16 +51,5 @@ export default defineConfig({
   treeshake: {
     moduleSideEffects: false,
   },
-  output: [
-    {
-      file: resolve(`dist/${name}.esm.js`),
-      exports: "named",
-      format: "es",
-    },
-    {
-      file: resolve(`dist/${name}.cjs.js`),
-      exports: "named",
-      format: "cjs",
-    },
-  ],
+  output,
 });

@@ -20,8 +20,5 @@
     "common"
   ],
   "author": "iron",
-  "license": "MIT",
-  "dependencies": {
-    "@1r21/types": "workspace:*"
-  }
+  "license": "MIT"
 }

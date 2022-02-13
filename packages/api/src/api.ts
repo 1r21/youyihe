@@ -1,4 +1,4 @@
-import { News, Translation } from "@1r21/types";
+import { News, Translation } from "./types";
 import request from './loadHttp'
 
 export async function getNews() {

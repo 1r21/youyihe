@@ -1,11 +1,13 @@
-type Http = typeof import('@1r21/request-wx') | typeof import('@1r21/request') 
+type Http = typeof import('@1r21/request') | typeof import('@1r21/request-wx')
 
 async function loadHttp() {
   let http = <Http>{};
-  if (!window && wx?.request) {
-    http = await import('@1r21/request-wx')
+  if (window) {
+    // h5
+    http = await import('@1r21/request').catch()
   } else {
-    http = await import('@1r21/request')
+    // wechat miniprogram
+    http = await import('@1r21/request-wx').catch()
   }
   return http.default
 }

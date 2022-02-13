@@ -1,3 +1,5 @@
+// wechat
+declare const wx: any;
 declare function getApp<T>(): T | any;
 
 type Method = "OPTIONS" | "GET" | "HEAD" | "POST" | "PUT" | "DELETE";

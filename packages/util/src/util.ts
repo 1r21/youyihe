@@ -1,5 +1,3 @@
-import { News } from "@1r21/types";
-
 import entities from "./entities";
 
 export function formatPlayTime(seconds: number) {
@@ -35,7 +33,7 @@ export type Text = {
 };
 
 // rawhtml = null, default value is invalid
-export function parseText(rawhtml: News["transcript"]): Text[] {
+export function parseText(rawhtml: string): Text[] {
   const textStyle = {
     color: '#555',
   }

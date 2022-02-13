@@ -1,38 +1,51 @@
-import path from "path";
-import fs from "fs";
-import rimraf from "rimraf";
 import { Extractor, ExtractorConfig } from "@microsoft/api-extractor";
-import { $ } from "zx";
-
-// build one target
-// eg: TARGET=api pnpm build
-if(process.env.TARGET) {
-  await build(process.env.TARGET)
-  process.exit(1)
-}
+import { chalk } from "zx";
+import { $, fs, path, os } from "zx";
 
 // all targets
 const allTargets = fs.readdirSync("packages").filter((f) => {
-  if (!fs.statSync(`packages/${f}`).isDirectory()) {
-    return false;
-  }
-  return true;
+  return fs.statSync(`packages/${f}`).isDirectory();
 });
 
-// build all
-for (const target of allTargets) {
-  await build(target);
+// build one target
+// Eg: TARGET=api pnpm build
+const target = process.env.TARGET;
+if (target) {
+  if (allTargets.includes(target)) {
+    await build(target);
+    process.exit(0);
+  } else {
+    console.log(chalk.red.bold(`!${target} no exists`));
+    process.exit(1);
+  }
+}
+
+await runParallel(os.cpus().length, allTargets, build);
+
+async function runParallel(maxConcurrency, source, iteratorFn) {
+  const ret = [];
+  const executing = [];
+  for (const item of source) {
+    const p = Promise.resolve().then(() => iteratorFn(item));
+    ret.push(p);
+
+    if (maxConcurrency <= source.length) {
+      const e = p.then(() => executing.splice(executing.indexOf(e), 1));
+      executing.push(e);
+      if (executing.length >= maxConcurrency) {
+        await Promise.race(executing);
+      }
+    }
+  }
+  return Promise.all(ret);
 }
 
 async function build(target) {
   const pkgDir = path.resolve(`packages/${target}`);
-  rimraf.sync(`${pkgDir}/dist`);
-
-  await $`npx rollup -c --environment TARGET:${target}`;
+  await $`rm -rf ${pkgDir}/dist && npx rollup -c --environment TARGET:${target}`;
 
   generateTypes(`${pkgDir}/api-extractor.json`);
-
-  rimraf.sync(`${pkgDir}/dist/packages`);
+  await $`rm -rf ${pkgDir}/dist/packages`;
 }
 
 function generateTypes(extractorPath) {
@@ -40,7 +53,7 @@ function generateTypes(extractorPath) {
   // Invoke API Extractor
   const extractorResult = Extractor.invoke(extractorConfig, {
     localBuild: true,
-    showVerboseMessages: true,
+    showVerboseMessages: false,
   });
 
   if (extractorResult.succeeded) {

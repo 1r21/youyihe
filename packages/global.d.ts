@@ -1,8 +1,5 @@
 declare const __API_HOST__: string;
 
-// wechat
-declare const wx: any;
-
 declare interface Window {
   dd: any;
 }

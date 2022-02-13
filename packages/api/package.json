@@ -21,9 +21,16 @@
   ],
   "author": "iron",
   "license": "MIT",
-  "dependencies": {
-    "@1r21/request": "workspace:*",
-    "@1r21/request-wx": "workspace:*",
-    "@1r21/types": "workspace:*"
+  "peerDependencies": {
+    "@1r21/request": "*",
+    "@1r21/request-wx": "*"
+  },
+  "peerDependenciesMeta": {
+    "@1r21/request": {
+      "optional": true
+    },
+    "@1r21/request-wx": {
+      "optional": true
+    }
   }
 }
