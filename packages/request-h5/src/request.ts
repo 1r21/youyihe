@@ -1,4 +1,6 @@
-import axios, { Axios, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { Axios, type AxiosRequestConfig, type AxiosResponse } from "axios";
+
+declare const __API_HOST__: string;
 
 // create instance
 const instance = axios.create({
@@ -29,13 +31,13 @@ instance.interceptors.response.use(<T>(response: AxiosResponse<ResponseData<T>>)
 
 export class WebRequest extends Axios {
   async request<R>(config: AxiosRequestConfig) {
-    return instance.request<any, R>(config)
+    return instance.request<ResponseData<R>, R>(config)
   }
   async get<R>(url: string, config?: AxiosRequestConfig) {
-    return instance.get<any, R>(url, config)
+    return instance.get<ResponseData<R>, R>(url, config)
   }
   async post<R>(url: string, data?: any, config?: AxiosRequestConfig) {
-    return instance.post<any, R>(url, data, config)
+    return instance.post<ResponseData<R>, R>(url, data, config)
   }
 }
 

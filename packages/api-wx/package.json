@@ -1,0 +1,38 @@
+{
+  "name": "@1r21/api-wx",
+  "version": "0.0.7",
+  "description": "taishan backend api for wechat miniprogram",
+  "main": "index.js",
+  "module": "dist/api-wx.esm.js",
+  "types": "dist/api-wx.d.ts",
+  "miniprogram": "dist/api-wx.cjs.js",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1r21/youyihe.git",
+    "directory": "packages/api-wx"
+  },
+  "scripts": {
+    "build": "node ./generate.js"
+  },
+  "keywords": [
+    "backend",
+    "api"
+  ],
+  "author": "iron",
+  "license": "MIT",
+  "dependencies": {
+    "@1r21/request-wx": "workspace:*"
+  },
+  "devDependencies": {
+    "@babel/generator": "^7.17.0",
+    "@babel/parser": "^7.17.0",
+    "@babel/traverse": "^7.17.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

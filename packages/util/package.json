@@ -1,6 +1,6 @@
 {
   "name": "@1r21/util",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "taishan web util",
   "main": "index.js",
   "module": "dist/util.esm.js",

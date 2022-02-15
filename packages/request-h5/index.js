@@ -1,0 +1,1 @@
+module.exports = require('./dist/request-h5.cjs.js')

@@ -1,8 +1,9 @@
 {
-  "version": "0.0.4",
+  "version": "0.0.7",
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "prebuild": "pnpm -r --filter ./packages build",
     "build": "zx scripts/build.mjs",
     "release": "zx scripts/release.mjs"
   },

@@ -1,0 +1,32 @@
+{
+  "name": "@1r21/api-h5",
+  "version": "0.0.7",
+  "description": "taishan backend api for web",
+  "main": "index.js",
+  "module": "dist/api-h5.esm.js",
+  "types": "dist/api-h5.d.ts",
+  "miniprogram": "dist/api-h5.cjs.js",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1r21/youyihe.git",
+    "directory": "packages/api-h5"
+  },
+  "keywords": [
+    "backend",
+    "api"
+  ],
+  "author": "iron",
+  "license": "MIT",
+  "dependencies": {
+    "@1r21/request-h5": "workspace:*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.2",
+    "@babel/parser": "^7.17.0",
+    "@babel/traverse": "^7.17.0"
+  }
+}

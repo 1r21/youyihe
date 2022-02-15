@@ -40,10 +40,33 @@ importers:
       typescript: 4.5.5
       zx: 5.0.0
 
-  packages/api:
-    specifiers: {}
+  packages/api-h5:
+    specifiers:
+      '@1r21/request-h5': workspace:*
+      '@babel/core': ^7.17.2
+      '@babel/parser': ^7.17.0
+      '@babel/traverse': ^7.17.0
+    dependencies:
+      '@1r21/request-h5': link:../request-h5
+    devDependencies:
+      '@babel/core': 7.17.2
+      '@babel/parser': 7.17.0
+      '@babel/traverse': 7.17.0
 
-  packages/request:
+  packages/api-wx:
+    specifiers:
+      '@1r21/request-wx': workspace:*
+      '@babel/generator': ^7.17.0
+      '@babel/parser': ^7.17.0
+      '@babel/traverse': ^7.17.0
+    dependencies:
+      '@1r21/request-wx': link:../request-wx
+    devDependencies:
+      '@babel/generator': 7.17.0
+      '@babel/parser': 7.17.0
+      '@babel/traverse': 7.17.0
+
+  packages/request-h5:
     specifiers:
       axios: ^0.25.0
     dependencies:

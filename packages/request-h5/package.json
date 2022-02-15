@@ -1,11 +1,11 @@
 {
-  "name": "@1r21/request",
-  "version": "0.0.4",
-  "description": "taishan network for FE",
+  "name": "@1r21/request-h5",
+  "version": "0.0.7",
+  "description": "taishan network for web",
   "main": "index.js",
-  "module": "dist/request.esm.js",
-  "types": "dist/request.d.ts",
-  "miniprogram": "dist/request.cjs.js",
+  "module": "dist/request-h5.esm.js",
+  "types": "dist/request-h5.d.ts",
+  "miniprogram": "dist/request-h5.cjs.js",
   "files": [
     "index.js",
     "dist"
@@ -13,7 +13,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/1r21/youyihe.git",
-    "directory": "packages/request"
+    "directory": "packages/request-h5"
   },
   "keywords": [
     "network",
