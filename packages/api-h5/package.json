@@ -1,6 +1,6 @@
 {
   "name": "@1r21/api-h5",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "taishan backend api for web",
   "main": "index.js",
   "module": "dist/api-h5.esm.js",
