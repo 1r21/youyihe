@@ -3,8 +3,7 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "prebuild": "pnpm -r --filter ./packages build",
-    "build": "zx scripts/build.mjs",
+    "build": "pnpm -r --filter ./packages build && zx scripts/build.mjs",
     "release": "zx scripts/release.mjs"
   },
   "devDependencies": {
