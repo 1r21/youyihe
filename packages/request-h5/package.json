@@ -21,6 +21,7 @@
   ],
   "author": "iron",
   "license": "MIT",
+  "homepage": "https://github.com/1r21/youyihe/tree/main/packages/request-h5#readme",
   "dependencies": {
     "axios": "^0.25.0"
   }

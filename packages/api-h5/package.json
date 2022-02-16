@@ -21,6 +21,7 @@
   ],
   "author": "iron",
   "license": "MIT",
+  "homepage": "https://github.com/1r21/youyihe/tree/main/packages/api-h5#readme",
   "dependencies": {
     "@1r21/request-h5": "workspace:*"
   },
