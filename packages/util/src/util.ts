@@ -27,34 +27,34 @@ export type Text = {
   rawStyle: string;
   style: {
     color?: string;
-    fontWeight?: string
-  }
+    fontWeight?: string;
+  };
   value: string;
 };
 
 // rawhtml = null, default value is invalid
 export function parseText(rawhtml: string): Text[] {
   const textStyle = {
-    color: '#555',
-  }
+    color: "#555",
+  };
 
   const titleStyle = {
-    fontWeight: 'bolder'
-  }
+    fontWeight: "bolder",
+  };
 
   const nullText: Text = {
     idx: 1,
-    type: 'text',
+    type: "text",
     rawStyle: deconstructStyle(textStyle),
     style: textStyle,
-    value: "Not prepare yet."
-  }
+    value: "Not prepare yet.",
+  };
 
   if (!rawhtml) {
-    return [nullText]
+    return [nullText];
   }
 
-  let content = rawhtml.replace(/(\r\n|\n|\r)/gm, "");
+  let content = rawhtml.replace(/(\r\n|\n|\r|\<p\/\>)/gm, "");
 
   for (let key in entities) {
     const re = new RegExp("&" + key + ";", "g");
@@ -90,11 +90,11 @@ export function parseText(rawhtml: string): Text[] {
 // obj to string, {fontWeight: 'bolder'} => "font-weight: bolder"
 function deconstructStyle(styleObj: { [styleName: string]: string }) {
   return Object.keys(styleObj).reduce((acc, style) => {
-    const styleVal = styleObj[style] + ';'
+    const styleVal = styleObj[style] + ";";
     const transformStyleKey = style.replace(/([A-Z])/g, "-$1").toLowerCase();
-    acc += `${transformStyleKey}:${styleVal}`
+    acc += `${transformStyleKey}:${styleVal}`;
     return acc;
-  }, '');
+  }, "");
 }
 
 export function throttle(fn: Function, delay = 300) {
@@ -102,10 +102,10 @@ export function throttle(fn: Function, delay = 300) {
   return (...args: any) => {
     const now = Date.now();
     if (now - last >= delay) {
-      fn(...args)
-      last = Date.now()
+      fn(...args);
+      last = Date.now();
     }
-  }
+  };
 }
 
 export function getMousePos(e: MouseEvent) {
