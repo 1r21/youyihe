@@ -1,6 +1,6 @@
 {
   "name": "@1r21/request-h5",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "taishan network for web",
   "main": "index.js",
   "module": "dist/request-h5.esm.js",
